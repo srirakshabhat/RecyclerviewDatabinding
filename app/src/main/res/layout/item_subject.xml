@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="subjectHandler"
+            type="com.example.recyclerviewwithdatabinding.view.interfaces.Subject" />
+        <variable
+            name="subjectModel"
+            type="com.example.recyclerviewwithdatabinding.model.SubjectModel" />
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/textview_subject"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{subjectModel.subject}"
+            android:padding="10dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimaryDark"/>
+        <TextView
+            android:onClick="@{(v) -> subjectHandler.onContentClickListener(v)}"
+            android:padding="10dp"
+            android:id="@+id/textview_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{subjectModel.content}"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="18sp"
+            android:layout_marginBottom="10dp"/>
+    </LinearLayout>
+</layout>
